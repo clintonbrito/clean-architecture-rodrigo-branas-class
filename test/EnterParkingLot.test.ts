@@ -1,6 +1,16 @@
 import EnterParkingLot from "../src/core/usecase/EnterParkingLot";
 import ParkingLotRepositoryMemory from "../src/infra/repository/ParkingLotRepositoryMemory";
 import GetParkingLot from '../src/core/usecase/GetParkingLot';
+import ParkingLotRepositorySQL from "../src/infra/repository/ParkingLotRepositorySQL";
+
+test("Should get parking lot", async function() {
+    const parkingLotRepositoryMemory = new ParkingLotRepositoryMemory();
+    const parkingLotRepositorySQL = new ParkingLotRepositorySQL();
+    const getParkingLot = new GetParkingLot(parkingLotRepositorySQL);
+    const parkingLot = await getParkingLot.execute("shopping");
+    console.log(parkingLot);
+    expect(parkingLot.code).toBe("shopping");
+})
 
 test("Should enter parking lot", async function() {
     const parkingLotRepositoryMemory = new ParkingLotRepositoryMemory();
