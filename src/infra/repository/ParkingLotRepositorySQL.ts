@@ -15,8 +15,9 @@ export default class ParkingLotRepositorySQL implements ParkingLotRepository {
             parkingLotData.occupiedSpaces
         )
     }
-    saveParkedCar(code: string, plate: string, date: Date): void {
-        
+    async saveParkedCar(code: string, plate: string, date: Date): Promise<void> {
+        const query = "insert into example.parked_car pc (code, plate, date) value ($1, $2, $3)";
+        await database.none(query, [code, plate, date]);
     }
 
 }
