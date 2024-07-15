@@ -5,7 +5,8 @@
   "scripts": {
     "main": "tsc && node ./dist/main.js",
     "test": "tsc && jest ./dist",
-    "express": "tsc && node ./dist/src/infra/http/express.js"
+    "express": "tsc && node ./dist/src/infra/http/express.js",
+    "start": "tsc && node ./dist/src/infra/http/express.js"
   },
   "author": "",
   "license": "ISC",
