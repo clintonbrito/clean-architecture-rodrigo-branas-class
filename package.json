@@ -6,6 +6,7 @@
     "main": "tsc && node ./dist/main.js",
     "test": "tsc && jest ./dist",
     "express": "tsc && node ./dist/src/infra/http/express.js",
+    "hapi": "tsc && node ./dist/src/infra/http/hapi.js",
     "start": "tsc && node ./dist/src/infra/http/express.js"
   },
   "author": "",
@@ -17,6 +18,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
+    "@hapi/hapi": "^21.3.10",
     "express": "^4.19.2",
     "pg-promise": "^11.9.0"
   }
